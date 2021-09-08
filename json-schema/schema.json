@@ -274,7 +274,8 @@
 										"semantic segmentation",
 										"classification",
 										"object detection",
-										"object segmentation"
+										"object segmentation",
+										"regression"
 									  ]
 								},
 								"number_of_classes": {
@@ -331,8 +332,7 @@
 							"required": [
 								"process_level",
 								"dtype",
-								"number_of_bands",
-								"class_name_mapping"
+								"number_of_bands"
 							],
 							"properties": {
 								"process_ level": {

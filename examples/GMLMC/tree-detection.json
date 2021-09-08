@@ -1,0 +1,173 @@
+{
+  "stac_version": "1.0.0-beta.2",
+  "stac_extensions": [
+    "dl-model",
+    "eo",
+    "scientific",
+    "provider"
+  ],
+  "id": 11234,
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          180,
+          90
+        ],
+        [
+          -180,
+          -90
+        ],
+        [
+          -180,
+          90
+        ],
+        [
+          180,
+          90
+        ],
+        [
+          180,
+          -90
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -180,
+    -90,
+    180,
+    90
+  ],
+  "collection": "a eo model catalog",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://landsat-stac.s3.amazonaws.com/some-eo-models/example-thelper-item.json"
+    },
+    {
+      "rel": "collection",
+      "href": "https://landsat-stac.s3.amazonaws.com/some-eo-models/catalog.json"
+    }
+  ],
+  "assets": [
+    {
+      "model_archive": {
+        "href": "https://github.com/weecology/DeepForest/releases/download/1.0.0/NEON.pt",
+        "type": "application/zip",
+        "title": "model archive",
+        "description": "model checkpoint from DeepForest 1.0 release",
+        "role": [
+          "model artefact"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "datetime": "2016-05-03T13:22:30Z",
+    "title": "DeepForest",
+    "description": "RetinaNet architecture with a resnet50 backbone for Tree Crown Detection in Airborne RGB imagery        ",
+    "license": "MIT",
+    "created": "2021-06-05T00:00:00.000Z",
+    "updated": "2021-06-05T00:00:00.000Z",
+    "platform": "Airborne",
+    "gsd": 0.3,
+    "eo:bands": [
+      {
+        "name": "blue",
+        "common_name": "blue",
+        "center_wavelength": 490
+      },
+      {
+        "name": "green",
+        "common_name": "green",
+        "center_wavelength": 500
+      },
+      {
+        "name": "red",
+        "common_name": "red",
+        "center_wavelength": 660
+      }
+    ],
+    "sci:publications": [
+      {
+        "citation": "Lin, Tsung-Yi, et al. \"Focal loss for dense object detection.\"  Proceedings of the IEEE international conference on computer vision. 2017,  arXiv 1803.02579"
+      }
+    ],
+    "dlm:runtime": {
+      "framework": "PyTorch",
+      "version": 1.9,
+      "model_handler": "trained_model.predict_file",
+      "model_src_url": "https://github.com/weecology/DeepForest",
+      "model_commit_hash": "9ad0994f93e0648faee6a7d7ab757bde0e4bc939",
+      "requirement_file": null
+    },
+    "dlm:archive": [
+      {
+        "name": "data.pkl",
+        "role": [
+          "serialized pickle file"
+        ]
+      },
+      {
+        "name": "./data",
+        "role": [
+          "model weight"
+        ]
+      },
+      {
+        "name": "version",
+        "role": [
+          "model version"
+        ]
+      }
+    ],
+    "dlm:data": {
+      "process_level": "ortho",
+      "dtype": "byte",
+      "number_of_bands": 3
+    },
+    "dlm:inputs": {
+      "name": "data",
+      "input_tensors": {
+        "batch": 1,
+        "channels": 3,
+        "height": 224,
+        "width": 224
+      },
+      "scaling_factor": 0.003921569,
+      "normalization:mean": [
+        0,
+        0,
+        0
+      ],
+      "normalization:std": [
+        1,
+        1,
+        1
+      ],
+      "selected_bands": [
+        0,
+        1,
+        3
+      ],
+      "pre_processing_function": "built-in"
+    },
+    "dlm:outputs": {
+      "task": "object detection",
+      "number_of_classes": 9,
+      "final_layer_size": [
+        1,
+        9
+      ],
+      "class_name_mapping": [
+        {
+          "0": "Tree"
+        }
+      ],
+      "post_processing_function": "built-in"
+    }
+  }
+}

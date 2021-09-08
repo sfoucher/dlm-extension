@@ -180,8 +180,7 @@
 								"scaling_factor",
 								"normalization:mean",
 								"normalization:std",
-								"selected_bands",
-								"input_tensors"
+								"selected_bands"
 							],
 							"properties": {
 								"name": {
@@ -458,6 +457,8 @@
 											"model weight",
 											"config file",
 											"test set",
+											"serialized pickle file",
+											"version file",
 											"other"
 										]
 									}

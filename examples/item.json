@@ -1,7 +1,5 @@
-// 20210610154737
-// https://raw.githubusercontent.com/crim-ca/CCCOT03/main/extension/dl-model/examples/example-thelper-item.json
-
 {
+  "$comment": "Original reference [https://raw.githubusercontent.com/crim-ca/CCCOT03/main/extension/dl-model/examples/example-thelper-item.json] on [2021-06-10T15:47:37]",
   "stac_version": "1.0.0-beta.2",
   "stac_extensions": [
     "dl-model",

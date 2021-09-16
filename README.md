@@ -1,3 +1,5 @@
+__Note__: the official version has now moved here: https://github.com/crim-ca/dlm-extension
+
 # Deep Learning Model Extension Specification
 
 [![hackmd-github-sync-badge](https://hackmd.io/3fB1lrHSTcSHQS57UhVk-Q/badge)](https://hackmd.io/3fB1lrHSTcSHQS57UhVk-Q)
